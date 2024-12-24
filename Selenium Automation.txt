@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.setProperty("webdriver.chrome.driver","Chromdriverpath");
+      webdriver driver = new ChromeDriver();
+      driver.manage().window().maximize();
+      driver.get("ebay.com");
+      
+  }
+  
+  public void verifycartItems(){
+    driver.findelement(By.id = "gh-ac").click();
+    driver.findelement(By.id = "gh-ac").clear();
+    driver.findelement(By.id = "gh-ac").sendkeys("books");
+    driver.findelement(By.xpath("//*[@id="ui-id-1"]")).click();
+    //driver.findelement(By.class("ui-menu-item ghAC_hidden")(0).Click();
+    Thread.sleep(500);
+    
+   // String itemtoselect = String.format("//div[@id='srp-river-results']/ul/li");
+    driver.findelement(By.xpath("//li[@class = 's-item s-item__pl-on-bottom'][1]")).click();
+    driver.findelement(By.xpath("//input[@id= 'qtyTextBox']")).click();
+    driver.findelement(By.xpath("//input[@id= 'qtyTextBox']")).clear();
+    driver.findelement(By.xpath("//input[@id= 'qtyTextBox']")).sendkeys("2");
+    driver.findelement(By.xpath("//span[contains (text(), "Add to cart")]");
+    driver.findelement(By.xpath("//button[@type='button']")).click;
+
+    Thread.sleep(2000);
+    driver.findelement(By.xpath("//a//u[text()='View Cart']")).click();
+    String quantity = driver.findelement(By.Xpath("//td[@class='cart_quantity']")).getText();
+    assertEquals(quantity,"2");
+  }
+}
